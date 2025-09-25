@@ -1,5 +1,5 @@
 # Step 1: 빌드용 이미지 (tsc 컴파일)
-FROM node:18 AS builder
+FROM node:20 AS builder
 
 WORKDIR /app
 
@@ -12,7 +12,7 @@ COPY src ./src
 RUN npx tsc
 
 # Step 2: 실행용 이미지 (최소화)
-FROM node:18-slim
+FROM node:20-slim
 
 WORKDIR /app
 
